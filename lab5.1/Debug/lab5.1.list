@@ -321,8 +321,8 @@ void uart_communication_fsm(){
  80002d4:	601a      	str	r2, [r3, #0]
 				clr_command();
  80002d6:	f7ff ff4d 	bl	8000174 <clr_command>
-				setTimer(1, 500);
- 80002da:	f44f 71fa 	mov.w	r1, #500	; 0x1f4
+				setTimer(1, 3000);
+ 80002da:	f640 31b8 	movw	r1, #3000	; 0xbb8
  80002de:	2001      	movs	r0, #1
  80002e0:	f000 f9dc 	bl	800069c <setTimer>
  80002e4:	e002      	b.n	80002ec <uart_communication_fsm+0x74>
@@ -358,8 +358,8 @@ void uart_communication_fsm(){
  800031c:	4913      	ldr	r1, [pc, #76]	; (800036c <uart_communication_fsm+0xf4>)
  800031e:	4814      	ldr	r0, [pc, #80]	; (8000370 <uart_communication_fsm+0xf8>)
  8000320:	f002 fc5c 	bl	8002bdc <HAL_UART_Transmit>
-				setTimer(1, 1000);
- 8000324:	f44f 717a 	mov.w	r1, #1000	; 0x3e8
+				setTimer(1, 3000);
+ 8000324:	f640 31b8 	movw	r1, #3000	; 0xbb8
  8000328:	2001      	movs	r0, #1
  800032a:	f000 f9b7 	bl	800069c <setTimer>
 			if (strcmp(get_command(), "OK") == 0){
@@ -455,8 +455,8 @@ int main(void)
  80003ae:	f44f 717a 	mov.w	r1, #1000	; 0x3e8
  80003b2:	2001      	movs	r0, #1
  80003b4:	f000 f972 	bl	800069c <setTimer>
-  setTimer(2, 500);
- 80003b8:	f44f 71fa 	mov.w	r1, #500	; 0x1f4
+  setTimer(2, 1000);
+ 80003b8:	f44f 717a 	mov.w	r1, #1000	; 0x3e8
  80003bc:	2002      	movs	r0, #2
  80003be:	f000 f96d 	bl	800069c <setTimer>
   while (1)
